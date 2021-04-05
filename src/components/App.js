@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container } from 'react-bootstrap';
 import SearchBar from './SearchBar';
 import GamesList from './GamesList';
 
 const App = () => {
     return (
-        <Container>
+        <Container fluid>
             <SearchBar />
             <GamesList />
         </Container>
