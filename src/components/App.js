@@ -5,7 +5,8 @@ import GamesList from './GamesList';
 const App = () => {
     return (
         <div>
-            
+            <SearchBar />
+            <GamesList />
         </div>
     );
 };
