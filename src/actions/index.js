@@ -12,7 +12,7 @@ export const getGames = () => {
         const res = await rawg.get('/games', {
             params: {
                 platforms: 7,
-                page_size: 10
+                ordering: 'released'
             }
         });
         dispatch({ type: 'GET_GAMES', payload: res.data.results });

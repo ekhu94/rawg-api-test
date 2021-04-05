@@ -16,6 +16,7 @@ const GamesList = ({ getGames, games, search }) => {
 };
 
 const mapStateToProps = state => {
+    console.log(state)
     return { games: state.games, search: state.search }
 };
 
