@@ -15,6 +15,6 @@ export const getGames = () => {
                 page_size: 10
             }
         });
-        dispatch({ type: 'GET_GAMES', payload: res.data });
+        dispatch({ type: 'GET_GAMES', payload: res.data.results });
     };
 };

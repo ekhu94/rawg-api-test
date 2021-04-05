@@ -1,11 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { searchTerm } from '../actions';
+import { Form, Input } from 'semantic-ui-react';
 
-const SearchBar = () => {
+const SearchBar = ({ search, searchTerm }) => {
     return (
-        <div>
-            
-        </div>
+        <Form style={{marginTop: '20px'}} onSubmit={e => e.preventDefault()}>
+            <Form.Field>
+                <Input placeholder="Search for games" value={search} onChange={e => searchTerm(e.target.value)} />
+            </Form.Field>
+        </Form>
     );
 };
 
-export default SearchBar;
+const mapStateToProps = state => {
+    return { search: state.search }
+};
+
+export default connect(mapStateToProps, { searchTerm })(SearchBar);
