@@ -1,6 +1,13 @@
 import rawg from '../apis/rawg';
 
-export const getAllGames = () => {
+export const searchTerm = term => {
+    return {
+        type: 'TERM_SEARCH',
+        payload: term
+    };
+};
+
+export const getGames = () => {
     return async (dispatch) => {
         const res = await rawg.get('/games', {
             params: {
@@ -8,6 +15,6 @@ export const getAllGames = () => {
                 page_size: 10
             }
         });
-        dispatch({ type: 'GET_ALL_GAMES', payload: res.data });
+        dispatch({ type: 'GET_GAMES', payload: res.data });
     };
 };
